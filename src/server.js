@@ -95,7 +95,7 @@ app.post('/api/products/:id/add-comment', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/product-reviews/build/index.html'));
+    res.sendFile(path.join(__dirname + '/build/index.html'));
 });
 
 app.listen(8000, () => console.log('Listening on port 8000'));
