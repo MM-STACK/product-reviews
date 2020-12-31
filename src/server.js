@@ -22,7 +22,7 @@ const withDB = async (operations, res) => {
     }
 }
 
-app.get('/api/products/:id', async (req, res) => {
+app.get('/product-reviews/api/products/:id', async (req, res) => {
     withDB(async (db) => {
         const productId = req.params.id;
         const productInfo = await db.collection('products').findOne({ id: productId });
@@ -30,7 +30,7 @@ app.get('/api/products/:id', async (req, res) => {
     }, res);
 })
 
-app.post('/api/products/:id/vote', async (req, res) => {
+app.post('/product-reviews/api/products/:id/vote', async (req, res) => {
     withDB(async (db) => {
         const productId = req.params.id;
         const { vote } = req.body;
@@ -61,7 +61,7 @@ app.post('/api/products/:id/vote', async (req, res) => {
     }, res);
 });
 
-app.post('/api/products/:id/add-comment', (req, res) => {    
+app.post('/product-reviews/api/products/:id/add-comment', (req, res) => {    
     withDB(async (db) => {                
         const { username, text } = req.body;
         const productId = req.params.id;    
@@ -69,7 +69,7 @@ app.post('/api/products/:id/add-comment', (req, res) => {
 
         const productInfo = await db.collection('products').findOne({ id: productId });
         if (productInfo !== null) {
-            console.log('found..')
+            // console.log('found..')
             await db.collection('products').updateOne({ id: productId }, {
                 '$set': {
                     comments: productInfo.comments.concat({ username, text }),
@@ -78,7 +78,7 @@ app.post('/api/products/:id/add-comment', (req, res) => {
 
             updatedproductInfo = await db.collection('products').findOne({ id: productId }); 
         } else {
-            console.log('not found..')
+            // console.log('not found..')
             updatedproductInfo = {
                 id: productId,
                 thumbsUp: 0,
@@ -95,7 +95,8 @@ app.post('/api/products/:id/add-comment', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/build/index.html'));
+    // res.sendFile(path.join(__dirname + '/build/index.html'));
+    res.sendFile(path.join(__dirname + '/build/product-reviews/index.html'));    
 });
 
 app.listen(8000, () => console.log('Listening on port 8000'));
