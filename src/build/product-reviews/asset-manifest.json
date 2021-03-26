@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/product-reviews/static/css/main.e4c5413a.chunk.css",
-    "main.js": "/product-reviews/static/js/main.3c3363f3.chunk.js",
-    "main.js.map": "/product-reviews/static/js/main.3c3363f3.chunk.js.map",
+    "main.js": "/product-reviews/static/js/main.8178cfdf.chunk.js",
+    "main.js.map": "/product-reviews/static/js/main.8178cfdf.chunk.js.map",
     "runtime-main.js": "/product-reviews/static/js/runtime-main.1781f405.js",
     "runtime-main.js.map": "/product-reviews/static/js/runtime-main.1781f405.js.map",
     "static/js/2.d01c0242.chunk.js": "/product-reviews/static/js/2.d01c0242.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1781f405.js",
     "static/js/2.d01c0242.chunk.js",
     "static/css/main.e4c5413a.chunk.css",
-    "static/js/main.3c3363f3.chunk.js"
+    "static/js/main.8178cfdf.chunk.js"
   ]
 }
